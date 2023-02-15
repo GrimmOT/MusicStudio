@@ -247,14 +247,14 @@ legend {
 }
 .footer{
     height: 150px;
+    width: 100%;
     background-color: rgb(18, 18, 18);
     display: flex;
     justify-content: space-between;
     font-family: 'Unbounded', cursive;
-
 }
 .footer-content{
-    width: 50%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -273,7 +273,7 @@ legend {
     text-align: center;
 }
 .footer-info{
-    width: 50%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
