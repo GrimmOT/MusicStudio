@@ -9,6 +9,8 @@ admin.site.register(Grade)
 
 admin.site.register(Song)
 
+admin.site.register(SongGenre)
+
 admin.site.register(Programm)
 
 admin.site.register(Instruments)

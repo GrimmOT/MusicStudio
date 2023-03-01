@@ -35,10 +35,10 @@
         </div>
     </div>
     <div class="main">
-        {% for i in "0123"|make_list %}
+        {% for group in groups %}
             <div class="group" style="background-image: url('{% static 'img/descriptionPhotojpg.jpg'%}')">
                 <div class="filter-layer"></div>
-                <p>Группа 9-ых классов</p>
+                <p>{{ group.name }}</p>
         </div>
         {% endfor %}
     </div>

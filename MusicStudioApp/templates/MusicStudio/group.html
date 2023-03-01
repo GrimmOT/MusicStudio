@@ -34,6 +34,53 @@
             </div>
         </div>
     </div>
+    <div class="main">
+        <div class="group-pic">
+            <div class="filter-layer">
+            </div>
+            <img src="{% static "img/descriptionPhotojpg.jpg"%}" alt="" style="width: 100%">
+            <div class="group-text">
+                <p>Группа 7-х классов</p>
+            </div>
+        </div>
+        <div class="group-page-title">
+            Участники группы
+        </div>
+        <div class="members">
+            {% for i in "012345"|make_list %}
+
+            <div class="member"  style="background-image: url('{% static 'img/descriptionPhotojpg.jpg'%}')">     
+            </div>
+            {% endfor %}
+        </div>
+        <div class="group-page-title">
+            Репертуар
+        </div>
+        <div class="repertoire">
+            <div> 
+                <table class="repertoire-table">
+                    <tr>
+                        <th>Название</th>
+                        <th>Автор</th>
+                        <th>Жанр</th>
+                        <th>Длительность</th>
+                    </tr>
+                    <tr>
+                        <td>Wake Me Up When Septembers Ends</td>
+                        <td>Green Day</td>
+                        <td>Альтернативный рок</td>
+                        <td>3:29</td>
+                    </tr>
+                    <tr>
+                        <td>In Bloom</td>
+                        <td>Nirvana</td>
+                        <td>Гранж</td>
+                        <td>4:00</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
     <div class="footer">
         <div class="footer-content">
             <div class="logo">

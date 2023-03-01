@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from MusicStudioApp.models import *
 
 # Create your views here.
 def index(request):
@@ -11,8 +12,11 @@ def index(request):
 
 
 def groups_page(request):
+    groups = Group.objects.all()
+    print(groups)
     context = {
-        "title": "Группы"
+        "title": "Группы",
+        "groups": groups
     } 
     return render(request, "MusicStudio/groups.html", context)
 
