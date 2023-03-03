@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from MusicStudioApp.models import *
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 def index(request):
@@ -22,6 +23,9 @@ def groups_page(request):
 
 
 def group_view(request, group_id):
+    group = get_object_or_404(Group, pk=group_id)
+    songs = group.song.all()
+    print(songs)
     context = {
         "title": "Страница группы",
         "id": group_id

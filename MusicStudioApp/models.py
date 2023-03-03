@@ -1,12 +1,6 @@
 from django.db import models
 
 # Create your models here.
-class Group(models.Model):
-    name = models.CharField(max_length = 150)
-
-    def __str__(self):
-        return f"{self.pk} - {self.name}"
-
 
 class Grade(models.Model):
     name = models.CharField(max_length = 150)
@@ -31,6 +25,13 @@ class Song(models.Model):
         default=1
     )
     time = models.TimeField(null = True)
+
+    def __str__(self):
+        return f"{self.pk} - {self.name}"
+    
+class Group(models.Model):
+    name = models.CharField(max_length = 150)
+    song = models.ManyToManyField(Song, null = True)
 
     def __str__(self):
         return f"{self.pk} - {self.name}"
