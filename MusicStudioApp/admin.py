@@ -5,8 +5,6 @@ from .models import *
 
 admin.site.register(Group)
 
-admin.site.register(Grade)
-
 admin.site.register(Song)
 
 admin.site.register(SongGenre)
@@ -14,3 +12,9 @@ admin.site.register(SongGenre)
 admin.site.register(Programm)
 
 admin.site.register(Instruments)
+
+admin.site.register(Member)
+
+admin.site.register(Image)
+
+admin.site.register(MemberGrade)

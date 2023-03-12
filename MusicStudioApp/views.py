@@ -28,6 +28,8 @@ def group_view(request, group_id):
     print(songs)
     context = {
         "title": "Страница группы",
-        "id": group_id
+        "id": group_id,
+        "songs": songs,
+        "group": group
     }
     return render(request, "MusicStudio/group.html", context)

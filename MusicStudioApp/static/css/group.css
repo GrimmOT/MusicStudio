@@ -27,6 +27,20 @@
     z-index: 2;
     top: 20px;
     left: 25px;
+    display: flex;
+}
+.group-text p{
+    margin-left: 30px;
+}
+.group-text img{
+    width: 50px;
+    position: relative;
+    top: 10px;
+    transition: 0.3s;
+}
+.group-text img:hover{
+    width: 64px;
+    top: 5px;
 }
 .members{
     width: 100%;
@@ -40,6 +54,27 @@
     border-radius: 25px;
     background-size: cover;
     margin: 20px;
+    color: white;
+    font-size: 20px;
+    padding: 20px 0px 0px 20px;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+}
+.member .filter-layer{
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(1px);
+    z-index: 0;
+}
+.member-name{
+    position: relative;
+    /* z-index: 1; */
+}
+.member-instrument{
+    font-size: 19px;
+    margin-top: 10px;
+    position: relative;
+    /* z-index: 1; */
 }
 .group-page-title{
     padding: 20px;

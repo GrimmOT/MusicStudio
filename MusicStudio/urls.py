@@ -20,6 +20,6 @@ from MusicStudioApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('MusicStudio', views.index),
-    path('MusicStudio/groups/', views.groups_page),
+    path('MusicStudio/groups/', views.groups_page, name = "groups"),
     path('MusicStudio/groups/<int:group_id>', views.group_view)
 ]

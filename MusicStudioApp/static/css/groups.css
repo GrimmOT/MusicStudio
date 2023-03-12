@@ -23,6 +23,7 @@
 .group p{
     z-index: 1;
     color: aliceblue;
+    pointer-events: none;
 
 }
 .filter-layer{

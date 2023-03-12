@@ -2,13 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-class Grade(models.Model):
-    name = models.CharField(max_length = 150)
-
-    def __str__(self):
-        return f"{self.pk} - {self.name}"
-
-
 class Programm(models.Model):
     text = models.CharField(max_length = 150)
 
@@ -40,9 +33,28 @@ class SongGenre(models.Model):
     name = models.CharField(max_length = 150)
     def __str__(self):
         return f"{self.pk} - {self.name}"
-
+    
 class Instruments(models.Model):
     name = models.CharField(max_length = 150)
 
     def __str__(self):
         return f"{self.pk} - {self.name}"
+
+class MemberGrade(models.Model):
+    name = models.CharField(max_length = 150)
+    def __str__(self):
+        return f"{self.pk} - {self.name}"
+
+class Image(models.Model):
+    src = models.ImageField()
+
+class Member(models.Model):
+    name = models.CharField(max_length = 150)
+    instruments = models.ManyToManyField(Instruments, null = True)
+    grade = models.ForeignKey(
+        'MemberGrade',
+        on_delete=models.CASCADE,
+        default=1
+    )
+    photos = models.ManyToManyField(Image, null = True)
+
