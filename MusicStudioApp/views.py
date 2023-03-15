@@ -25,11 +25,14 @@ def groups_page(request):
 def group_view(request, group_id):
     group = get_object_or_404(Group, pk=group_id)
     songs = group.song.all()
+    members = group.member.all()
     print(songs)
+    print(members)
     context = {
         "title": "Страница группы",
         "id": group_id,
         "songs": songs,
-        "group": group
+        "group": group,
+        "members": members
     }
     return render(request, "MusicStudio/group.html", context)

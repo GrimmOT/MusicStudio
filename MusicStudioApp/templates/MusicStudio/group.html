@@ -50,18 +50,20 @@
             Участники группы
         </div>
         <div class="members">
-            {% for i in "012345"|make_list %}
+            {% for member in members %}
 
             <div class="member"  style="background-image: url('{% static 'img/descriptionPhotojpg.jpg'%}')">
                 <div class="filter-layer">
                     
                 </div> 
                 <div class="member-name">
-                    <p>Александр <br> Шутов (7Б)</p>
+                    <p> {{ member.name }} <br> {{ member.surname }} ({{ member.grade }})</p>
                 </div>
-                <div class="member-instrument">
-                    <p>Барбаны</p>
-                </div>
+                {% for instrument in member.instruments.all %}
+                    <div class="member-instrument">
+                        <p>{{ instrument.name }}</p>
+                    </div>
+                {% endfor %}
             </div>
             {% endfor %}
         </div>

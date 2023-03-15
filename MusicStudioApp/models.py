@@ -25,6 +25,7 @@ class Song(models.Model):
 class Group(models.Model):
     name = models.CharField(max_length = 150)
     song = models.ManyToManyField(Song, null = True)
+    member = models.ManyToManyField('Member', null = True)
 
     def __str__(self):
         return f"{self.pk} - {self.name}"
@@ -50,11 +51,14 @@ class Image(models.Model):
 
 class Member(models.Model):
     name = models.CharField(max_length = 150)
+    surname = models.CharField(max_length = 150, null = True)
     instruments = models.ManyToManyField(Instruments, null = True)
     grade = models.ForeignKey(
         'MemberGrade',
         on_delete=models.CASCADE,
         default=1
     )
-    photos = models.ManyToManyField(Image, null = True)
+    photos = models.ManyToManyField(Image, blank = True)
+    def __str__(self):
+        return f"{self.pk} - {self.surname} {self.name} {self.grade.name}"
 
