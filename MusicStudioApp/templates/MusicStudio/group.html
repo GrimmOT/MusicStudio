@@ -38,7 +38,14 @@
         <div class="group-pic">
             <div class="filter-layer">
             </div>
-            <img src="{% static "img/descriptionPhotojpg.jpg"%}" alt="" style="width: 100%">
+            <img src="
+                {% if group.main_photo %}
+                    {{ group.main_photo.src.url }}
+                {% else %}
+                    https://placehold.co/600x400?text=Image
+                {% endif %}
+            " 
+            alt="" style="width: 100%">
             <div class="group-text">
                 <a href="{% url 'groups'%}">
                      <img src="{% static "img/arrow-down-sign-to-navigate.png"%}" id = "back-button" alt="">
@@ -52,12 +59,12 @@
         <div class="members">
             {% for member in members %}
 
-            <div class="member"  style="background-image: url('{% static 'img/descriptionPhotojpg.jpg'%}')">
+            <div class="member"  style="background-image: url({{ member.main_photo.src.url }})">
                 <div class="filter-layer">
                     
                 </div> 
                 <div class="member-name">
-                    <p> {{ member.name }} <br> {{ member.surname }} ({{ member.grade }})</p>
+                    <p> {{ member.name }} <br> {{ member.surname }} ({{ member.grade.name }})</p>
                 </div>
                 {% for instrument in member.instruments.all %}
                     <div class="member-instrument">

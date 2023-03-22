@@ -36,3 +36,10 @@ def group_view(request, group_id):
         "members": members
     }
     return render(request, "MusicStudio/group.html", context)
+
+
+def concerts_view(request):
+    context = {
+
+    }
+    return render(request, "MusicStudio/concerts.html", context)

@@ -26,6 +26,13 @@ class Group(models.Model):
     name = models.CharField(max_length = 150)
     song = models.ManyToManyField(Song, null = True)
     member = models.ManyToManyField('Member', null = True)
+    main_photo = models.ForeignKey(
+        'Image',
+        null=True,
+        on_delete=models.CASCADE,
+        related_name = "main_group_photo"
+    )
+    photos = models.ManyToManyField('Image', null = True, related_name = "group_photos")
 
     def __str__(self):
         return f"{self.pk} - {self.name}"
@@ -49,6 +56,12 @@ class MemberGrade(models.Model):
 class Image(models.Model):
     src = models.ImageField()
 
+    def __str__(self):
+        start = self.src.url.rfind("/")
+        end = self.src.url.rfind(".")
+        return f"{self.pk} - {self.src.url[start + 1 : end]}"
+
+
 class Member(models.Model):
     name = models.CharField(max_length = 150)
     surname = models.CharField(max_length = 150, null = True)
@@ -58,7 +71,15 @@ class Member(models.Model):
         on_delete=models.CASCADE,
         default=1
     )
-    photos = models.ManyToManyField(Image, blank = True)
+    photos = models.ManyToManyField(
+        Image, blank = True,
+        related_name = "photos")
+    main_photo = models.ForeignKey(
+        Image,
+        on_delete=models.CASCADE,
+        null = True,
+        related_name = "main_photo" 
+    )
     def __str__(self):
         return f"{self.pk} - {self.surname} {self.name} {self.grade.name}"
 
