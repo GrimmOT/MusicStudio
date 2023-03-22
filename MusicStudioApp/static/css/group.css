@@ -16,7 +16,7 @@
     left: 0;
     z-index: 1;
     height: 100%;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(0px);
 }
 .group-text{
     text-align: center;

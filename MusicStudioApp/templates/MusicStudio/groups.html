@@ -36,10 +36,15 @@
     </div>
     <div class="main">
         {% for group in groups %}
-            <div class="group" style="background-image: url('{% static 'img/descriptionPhotojpg.jpg'%}')">
+            <div class="group" style="background-image: url(
+            {% if group.main_photo %}
+                {{ group.main_photo.src.url }}
+            {% else %}
+                https://placehold.co/600x400?text=Image
+            {% endif %})">
                 <div class="filter-layer" groupId = "{{ group.pk }}"></div>
                 <p>{{ group.name }}</p>
-        </div>
+            </div>
         {% endfor %}
     </div>
     <div class="footer">
