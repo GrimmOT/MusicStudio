@@ -26,6 +26,7 @@ def group_view(request, group_id):
     group = get_object_or_404(Group, pk=group_id)
     songs = group.song.all()
     members = group.member.all()
+    img = Image.objects.get(pk=23)
     print(songs)
     print(members)
     context = {
@@ -33,13 +34,37 @@ def group_view(request, group_id):
         "id": group_id,
         "songs": songs,
         "group": group,
-        "members": members
+        "members": members,
+        "placeholder": img
     }
     return render(request, "MusicStudio/group.html", context)
 
 
 def concerts_view(request):
+    img = Image.objects.get(pk=23)
+    concerts = Concert.objects.all()
+    context = {
+        "concerts": concerts,
+        "placeholder": img
+    }
+    return render(request, "MusicStudio/concerts.html", context)
+
+
+def gallery_view(request, concert_id):
+    if concert_id == -1:
+        pass
+    else:
+        concert = get_object_or_404(Concert, pk=concert_id)
+        photos = concert.photos.all()
+    context = {
+        "concert": concert,
+        "photos": photos
+    }
+    return render(request, "MusicStudio/gallery.html", context)
+
+
+def contacts_view(request):
     context = {
 
     }
-    return render(request, "MusicStudio/concerts.html", context)
+    return render(request, "MusicStudio/gallery.html", context)

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static "css/style.css"%}">
     <link rel="stylesheet" href="{% static "css/concerts.css"%}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <title>Концерты</title>
 </head>
 <body>
@@ -19,27 +20,74 @@
         </div>
         <div class="nav">
             <div class="link-wrapper">
-                <div class="link">
-                    Главная
-                </div>
-                <div class="link">
-                    Группы
-                </div>
-                <div class="link">
-                    Концерты
-                </div>
-                <div class="link">
-                    Контакты
-                </div>
+                <a href="{% url 'main'%}">
+                    <div class="link">
+                        Главная
+                    </div>
+                </a>
+                <a href="{% url 'groups'%}">
+                    <div class="link">
+                        Группы
+                    </div>
+                </a>
+                <a href="{% url 'concerts'%}">
+                    <div class="link">
+                        Концерты
+                    </div>
+                </a>
+                <a href="{% url 'groups'%}">
+                    <div class="link">
+                        Контакты
+                    </div>
+                </a>
             </div>
         </div>
     </div>
     <div class="main">
-        <div class="concert">
-            <div class="concert-name">
-                <p>Зимний рок-фестиваль 2023</p>
+        {% for concert in concerts %}
+            <div class="concert">
+                <div class="concert-name">
+                    <p>{{ concert.name }}</p>
+                </div>
+                <div class="concert-video">
+                    <div>
+                        <iframe width="560" height="315" src="{{ concert.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="separation">
+                </div>
+                <div class="concert-photos">
+                    <!-- Slider main container -->
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            {% for photo in concert.photos.all %}
+                                <div class="swiper-slide">
+                                    <img src="{{ photo.src.url }}" alt="">
+                                </div>
+                            {% endfor %}
+                        </div>
+                        
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                
+                </div>
+                <div class="button">
+                    <div>
+                        <a href="{% url 'gallery' concert.pk %}">
+                            <button class="groups-button">
+                                Все фотогрифии
+                            </button>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
+        {% endfor %}
     </div>
     <div class="footer">
         <div class="footer-content">
@@ -51,18 +99,26 @@
             </div>
             <div class="footer-links">
                 <div class="footer-link-wrapper">
-                    <div class="footer-link">
-                        Главная
-                    </div>
-                    <div class="footer-link">
-                        Группы
-                    </div>
-                    <div class="footer-link">
-                        Концерты
-                    </div>
-                    <div class="footer-link">
-                        Контакты
-                    </div>
+                    <a href="{% url 'main'%}">
+                        <div class="footer-link">
+                            Главная
+                        </div>
+                    </a>
+                    <a href="{% url 'groups'%}">
+                        <div class="footer-link">
+                            Группы
+                        </div>
+                    </a>
+                    <a href="{% url 'concerts'%}">
+                        <div class="footer-link">
+                            Концерты
+                        </div>
+                    </a>
+                    <a href="{% url 'groups'%}">
+                        <div class="footer-link">
+                            Контакты
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -75,6 +131,7 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="{% static "js/concert.js" %}" ></script>
 </body>
 </html>

@@ -78,8 +78,18 @@ class Member(models.Model):
         Image,
         on_delete=models.CASCADE,
         null = True,
+        blank = True,
         related_name = "main_photo" 
     )
     def __str__(self):
         return f"{self.pk} - {self.surname} {self.name} {self.grade.name}"
+    
 
+class Concert(models.Model):
+    name = models.CharField(max_length = 150)
+    photos = models.ManyToManyField(
+        Image, blank = True,
+        related_name = "concerts_photos")
+    video = models.CharField(max_length = 150)
+    def __str__(self):
+        return f"{self.pk} - {self.name}"

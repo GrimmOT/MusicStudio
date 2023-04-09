@@ -22,10 +22,12 @@ Including another URLconf
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('MusicStudio', views.index),
+    path('MusicStudio', views.index, name="main"),
     path('MusicStudio/groups/', views.groups_page, name = "groups"),
     path('MusicStudio/groups/<int:group_id>', views.group_view),
-    path('MusicStudio/concerts', views.concerts_view)
+    path('MusicStudio/concerts', views.concerts_view, name="concerts"),
+    path('MusicStudio/gallery/<int:concert_id>', views.gallery_view, name="gallery"),
+    path('MusicStudio/contacts', views.contacts_view, name="contacts"),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,113 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/style.css"%}">
+    <link rel="stylesheet" href="{% static "css/gallery.css"%}">
+    <title>Галерея</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <div class="logo-wrapper">
+                <img src="{% static "img/Logo.png"%}" alt="" >
+            </div>
+            <p>Рок-Студия Павловской Гимназии</p>
+        </div>
+        <div class="nav">
+            <div class="link-wrapper">
+                <a href="{% url 'main'%}">
+                    <div class="link">
+                        Главная
+                    </div>
+                </a>
+                <a href="{% url 'groups'%}">
+                    <div class="link">
+                        Группы
+                    </div>
+                </a>
+                <a href="{% url 'concerts'%}">
+                    <div class="link">
+                        Концерты
+                    </div>
+                </a>
+                <a href="{% url 'groups'%}">
+                    <div class="link">
+                        Контакты
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="concert">
+            <div class="concert-name">
+                <p>{{ concert.name }}</p>
+            </div>
+        </div>
+        <div class="photo">
+            {% for photo in photos %}
+                <div class="concert-photo">
+                    <img src="{{ photo.src.url }}" alt="">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-content">
+            <div class="logo">
+                <div class="logo-wrapper">
+                    <img src="{% static "img/Logo.png"%}" alt="" >
+                </div>
+                <p>Рок-Студия Павловской Гимназии</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-link-wrapper">
+                    <a href="{% url 'main'%}">
+                        <div class="footer-link">
+                            Главная
+                        </div>
+                    </a>
+                    <a href="{% url 'groups'%}">
+                        <div class="footer-link">
+                            Группы
+                        </div>
+                    </a>
+                    <a href="{% url 'concerts'%}">
+                        <div class="footer-link">
+                            Концерты
+                        </div>
+                    </a>
+                    <a href="{% url 'groups'%}">
+                        <div class="footer-link">
+                            Контакты
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-info">
+            <div class="adress">
+                <p>143581, Московская область, г.о. Истра, дер. Веледниково, ул. Живописная, д. 136</p>
+            </div>
+            <div class="autor">
+                © 2023 АНО «Павловская Гимназия» 
+            </div>
+        </div>
+    </div>
+    <div class="popup-background">
+        <div class="close">
+            <img src="{% static "img/Close.svg" %}" alt="">
+        </div>
+        <div class="popup-content">
+            <div class="popup-image">
+                <img src="{% static "img/True.png"%}" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="{% static "js/gallery.js" %}" ></script>
+</body>
+</html>

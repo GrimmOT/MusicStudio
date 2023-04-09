@@ -18,3 +18,5 @@ admin.site.register(Member)
 admin.site.register(Image)
 
 admin.site.register(MemberGrade)
+
+admin.site.register(Concert)

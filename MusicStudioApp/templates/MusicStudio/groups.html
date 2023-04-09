@@ -19,18 +19,26 @@
         </div>
         <div class="nav">
             <div class="link-wrapper">
-                <div class="link">
-                    Главная
-                </div>
-                <div class="link">
-                    Группы
-                </div>
-                <div class="link">
-                    Концерты
-                </div>
-                <div class="link">
-                    Контакты
-                </div>
+                <a href="{% url 'main'%}">
+                    <div class="link">
+                        Главная
+                    </div>
+                </a>
+                <a href="{% url 'groups'%}">
+                    <div class="link">
+                        Группы
+                    </div>
+                </a>
+                <a href="{% url 'concerts'%}">
+                    <div class="link">
+                        Концерты
+                    </div>
+                </a>
+                <a href="{% url 'groups'%}">
+                    <div class="link">
+                        Контакты
+                    </div>
+                </a>
             </div>
         </div>
     </div>
@@ -57,18 +65,26 @@
             </div>
             <div class="footer-links">
                 <div class="footer-link-wrapper">
-                    <div class="footer-link">
-                        Главная
-                    </div>
-                    <div class="footer-link">
-                        Группы
-                    </div>
-                    <div class="footer-link">
-                        Концерты
-                    </div>
-                    <div class="footer-link">
-                        Контакты
-                    </div>
+                    <a href="{% url 'main'%}">
+                        <div class="footer-link">
+                            Главная
+                        </div>
+                    </a>
+                    <a href="{% url 'groups'%}">
+                        <div class="footer-link">
+                            Группы
+                        </div>
+                    </a>
+                    <a href="{% url 'concerts'%}">
+                        <div class="footer-link">
+                            Концерты
+                        </div>
+                    </a>
+                    <a href="{% url 'groups'%}">
+                        <div class="footer-link">
+                            Контакты
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
