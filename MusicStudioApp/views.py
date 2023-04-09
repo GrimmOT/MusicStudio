@@ -2,6 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from MusicStudioApp.models import *
 from django.shortcuts import get_object_or_404
+from django.shortcuts import redirect
+
+
+def redirect_view(request):
+    response = redirect('/MusicStudio')
+    return response
+
 
 # Create your views here.
 def index(request):

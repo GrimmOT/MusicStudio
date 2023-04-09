@@ -21,6 +21,7 @@ Including another URLconf
 """
 
 urlpatterns = [
+    path ('', views.redirect_view ),
     path('admin/', admin.site.urls),
     path('MusicStudio', views.index, name="main"),
     path('MusicStudio/groups/', views.groups_page, name = "groups"),
