@@ -35,7 +35,7 @@
                         Концерты
                     </div>
                 </a>
-                <a href="{% url 'groups'%}">
+                <a href="{% url 'contacts'%}">
                     <div class="link">
                         Контакты
                     </div>
@@ -62,7 +62,7 @@
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
-                            {% for photo in concert.photos.all %}
+                            {% for photo in concert.photos.all|slice:":4" %}
                                 <div class="swiper-slide">
                                     <img src="{{ photo.src.url }}" alt="">
                                 </div>
@@ -114,7 +114,7 @@
                             Концерты
                         </div>
                     </a>
-                    <a href="{% url 'groups'%}">
+                    <a href="{% url 'contacts'%}">
                         <div class="footer-link">
                             Контакты
                         </div>

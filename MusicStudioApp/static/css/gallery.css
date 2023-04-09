@@ -36,7 +36,7 @@
 }
 .popup-background{
     width: 100%;
-    position: absolute;
+    position: fixed;
     background-color: rgba(0, 0, 0, 0.6);
     top: 0;
     left: 0;
@@ -52,10 +52,20 @@
     position: absolute;
     right: 20px;
     top: 20px;
+    transition: 0.3s;
 }
 .close img{
     width: 75px;
 }
+.close:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
 .popup-image img{
     height: 600px;
+    border-radius:15px ;
 }   
+
+.disable-scroll{
+    overflow: hidden;
+}
