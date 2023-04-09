@@ -188,6 +188,9 @@ legend {
 .about-us-text p{
     margin-top: 20px;
 }
+.about-us-maintext{
+    font-size: 20px;
+}
 .about-us-title{
     position: relative;
     bottom: 30px;
