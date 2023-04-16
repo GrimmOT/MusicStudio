@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static  %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static "css/style.css"%}">
     <link rel="stylesheet" href="{% static "css/contacts.css"%}">
+    <link rel="stylesheet" href="{% static "css/group.css"%}">
     <title>Контакты</title>
 </head>
 <body>
@@ -33,16 +35,44 @@
                         Концерты
                     </div>
                 </a>
-                {% comment %} <a href="{% url 'contacts'%}">
+                <a href="{% url 'contacts'%}">
                     <div class="link">
                         Контакты
                     </div>
-                </a> {% endcomment %}
+                </a>
             </div>
         </div>
     </div>
     <div class="main">
-
+        <div class="teachers-page-title">
+            Преподаватели
+        </div>
+        <div class="teachers">
+            {% for teacher in teachers %}
+                <a href="{% url 'concerts'%}">
+                    <div class="member"  style="background-image: url(
+                        {% if teacher.main_photo %}
+                            {{ teacher.main_photo.src.url }}
+                        {% else %}
+                            {{ placeholder.src.url }}
+                        {% endif %}
+                    )">
+                        <div class="filter-layer">
+                                
+                        </div> 
+                        <div class="member-name">
+                            <p> {{ teacher.surname }} <br> {{ teacher.name }} {{ teacher.middle_name }}</p>
+                        </div>
+                        <p class="experience">Педагог по: </p>
+                        {% for instrument in teacher.instruments.all %}
+                            <div class="member-instrument">
+                                <p>{{ instrument.name }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
     </div>
     <div class="footer">
         <div class="footer-content">
@@ -69,11 +99,11 @@
                             Концерты
                         </div>
                     </a>
-                    {% comment %} <a href="{% url 'contacts'%}">
+                    <a href="{% url 'contacts'%}">
                         <div class="footer-link">
                             Контакты
                         </div>
-                    </a> {% endcomment %}
+                    </a>
                 </div>
             </div>
         </div>

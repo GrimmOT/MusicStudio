@@ -71,7 +71,15 @@ def gallery_view(request, concert_id):
 
 
 def contacts_view(request):
+    teachers = Teacher.objects.all()
+    context = {
+        "teachers": teachers
+    }
+    return render(request, "MusicStudio/contacts.html", context)
+
+
+def teacher_view(request):
     context = {
 
     }
-    return render(request, "MusicStudio/gallery.html", context)
+    return render(request, "MusicStudio/teacher.html", context)

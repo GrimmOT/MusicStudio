@@ -20,3 +20,5 @@ admin.site.register(Image)
 admin.site.register(MemberGrade)
 
 admin.site.register(Concert)
+
+admin.site.register(Teacher)

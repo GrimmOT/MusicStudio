@@ -93,3 +93,22 @@ class Concert(models.Model):
     video = models.CharField(max_length = 150)
     def __str__(self):
         return f"{self.pk} - {self.name}"
+
+
+class Teacher(models.Model):
+    name = models.CharField(max_length = 150)
+    surname = models.CharField(max_length = 150, null = True)
+    middle_name = models.CharField(max_length = 150, null = True)
+    instruments = models.ManyToManyField(Instruments, null = True)
+    quote = models.TextField(null = True)
+    work_expirience = models.IntegerField(default = 0) 
+    main_photo = models.ForeignKey(
+        Image,
+        on_delete=models.CASCADE,
+        null = True,
+        blank = True,
+        related_name = "main_teacher_photo" 
+    )
+    
+    def __str__(self):
+        return f"{self.pk} - {self.surname} {self.name} {self.middle_name}"
