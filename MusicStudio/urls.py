@@ -29,7 +29,7 @@ urlpatterns = [
     path('MusicStudio/concerts', views.concerts_view, name="concerts"),
     path('MusicStudio/gallery/<int:concert_id>', views.gallery_view, name="gallery"),
     path('MusicStudio/contacts', views.contacts_view, name="contacts"),
-    path('MusicStudio/teacher', views.teacher_view, name="teacher"),
+    path('MusicStudio/teacher/<int:teacher_id>', views.teacher_view, name="teacher"),
 ]
 
 if settings.DEBUG:

@@ -51,6 +51,7 @@ def concerts_view(request):
     img = Image.objects.get(pk=23)
     concerts = Concert.objects.all()
     context = {
+        "title": "Концерты",
         "concerts": concerts,
         "placeholder": img
     }
@@ -64,6 +65,7 @@ def gallery_view(request, concert_id):
         concert = get_object_or_404(Concert, pk=concert_id)
         photos = concert.photos.all()
     context = {
+        "title": "Галлерея",
         "concert": concert,
         "photos": photos
     }
@@ -73,13 +75,17 @@ def gallery_view(request, concert_id):
 def contacts_view(request):
     teachers = Teacher.objects.all()
     context = {
+        "title": "Педагоги",
         "teachers": teachers
     }
     return render(request, "MusicStudio/contacts.html", context)
 
 
-def teacher_view(request):
-    context = {
+def teacher_view(request, teacher_id):
 
+    teacher = get_object_or_404(Teacher, pk=teacher_id)
+    context = {
+        "title": teacher.surname + " " + teacher.name + " " + teacher.middle_name,
+        "teacher": teacher
     }
     return render(request, "MusicStudio/teacher.html", context)

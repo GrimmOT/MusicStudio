@@ -1,0 +1,17 @@
+*{
+    font-family: 'Unbounded', cursive;
+}
+.header{
+    background-color: rgb(18, 18, 18);
+}
+.main{
+    display: flex;
+}
+.teacher-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.teacher-photo img{
+    height: 500px;
+}
