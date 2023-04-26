@@ -18,3 +18,5 @@ const swiper = new Swiper('.swiper', {
     //   el: '.swiper-scrollbar',
     // },
   });
+
+  swiper.slidesPerView

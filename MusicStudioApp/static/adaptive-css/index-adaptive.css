@@ -1,0 +1,49 @@
+@media screen and (max-width: 820px){
+    .header-page{
+        background-repeat: no-repeat;
+        height: 50vh !important;
+    }
+    .header-content{
+        justify-content: center;
+    }
+    .tagline{
+        font-size: 40px;
+        width: 90%;
+    }
+    .underTag{
+        font-size: 15px;
+        width: 70%;
+    }
+    .about-us{
+        flex-wrap: wrap
+    }
+    .about-us > .about-us-title{
+        display: block;
+        margin-right: auto;
+        margin-left: 50px;
+        font-size: 50px;
+        margin-top: -120px;
+    }
+    .about-us .about-us-text .about-us-title{
+        display: none;
+    }
+    .about-us-text{
+        width: 85%;
+        margin-left: 15px;
+    }
+    .about-us-maintext{
+        font-size: 20px;
+    }
+    .groups{
+        flex-wrap: wrap;
+    }
+    .about-us-text .groups-button{
+        display: none;
+    }
+    .groups > a .groups-button{
+        display: block;
+    }
+    .groups-photo-line img{
+        width: 15vw;
+    }
+}

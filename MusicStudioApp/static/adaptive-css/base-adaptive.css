@@ -1,0 +1,40 @@
+
+@media screen and (max-width: 768px){
+    .nav{
+        display: none;
+    }
+    .menu{
+        display: block !important; 
+    }
+    .footer{
+        height: 200px !important;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 10px 10px;
+    }
+    .footer-links{
+        display: none;
+    }
+    .footer-content, .footer-info{
+        width: 80% !important;
+    }
+    
+}
+@media screen and (max-width: 425px){
+    .logo p{
+        font-size: 15px;
+    }
+    .footer-content{
+        font-size: 12px;
+    }
+    .adress{ 
+        font-size: 15px;
+    }
+    .autor{
+        font-size: 10px;
+    }
+    .logo-wrapper img{
+        width: 50px;
+    }
+}
