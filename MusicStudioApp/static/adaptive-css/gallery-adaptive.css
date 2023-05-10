@@ -1,0 +1,17 @@
+@media screen and (max-width: 820px){
+    .popup-background{
+        padding: 0px 30px 0px 30px;
+    }
+    .popup-image img{
+        height: 500px;
+    }
+}
+@media screen and (max-width: 425px){
+
+    .concert-photo img{
+        height: 80%;
+    }
+    .photo{
+        justify-content: center;
+    }
+}
