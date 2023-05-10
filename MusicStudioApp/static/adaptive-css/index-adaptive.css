@@ -47,3 +47,17 @@
         width: 15vw;
     }
 }
+@media screen and (max-width: 425px){
+    .underTag{
+        display: none;
+    }
+    .tagline{
+        font-size: 22px;
+    }
+    .about-us{
+        display: none;
+    }
+    .groups{
+        display: none;
+    }
+}

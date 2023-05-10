@@ -9,6 +9,8 @@ for(let i = 0; i < photos.length; i++){
 }
 
 function openPopup(event){
+    if (window.innerWidth <= 425) return
+
     popup.style.display = "flex"
     body.classList.add("disable-scroll")
     let imageUrl = event.target.getAttribute("src")

@@ -9,7 +9,14 @@
 @media screen and (max-width: 425px){
 
     .concert-photo img{
-        height: 80%;
+        height: 50vw;
+    }
+    .concert-name{
+        font-size: 30px;
+        text-align: center;
+    }
+    .concert-photo img:hover{
+        height: 50vw;
     }
     .photo{
         justify-content: center;
