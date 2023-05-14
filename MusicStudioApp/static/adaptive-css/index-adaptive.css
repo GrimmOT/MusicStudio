@@ -36,6 +36,16 @@
     }
     .groups{
         flex-wrap: wrap;
+        height: 1200px;
+    }
+    .groups-photo{
+        width: 900px;
+    }
+    .groups-photo-line{
+        justify-content: space-around;
+    }
+    .groups-photo-line img{
+        width: 300px !important;
     }
     .about-us-text .groups-button{
         display: none;
@@ -51,14 +61,42 @@
     .underTag{
         display: none;
     }
+    .header-page{
+        height: 40vh !important;
+        background-size: cover;
+        background-position: -100px;
+    }
+    .header-content{
+        height: 220px;
+    }
     .tagline{
         font-size: 22px;
-        
+         margin-top: 70px;
+    }
+    .about-us-title p{
+        font-size: 30px;
+    }
+    .about-us > .about-us-title{
+        margin-left: 20px;
     }
     .about-us{
-        display: none;
+        height: 80vh;
+        margin-top: 120px;
     }
-    .groups{
-        display: none;
+    .about-us-photo::before{
+        width: 300px;
+        height: 187px;
+    }
+    .about-us-photo img{
+        width: 300px
+    }
+    .groups-photo{
+        width: 500px;
+    }
+    .groups-photo-line{
+        justify-content: space-around;
+    }
+    .groups-photo-line img{
+        width: 180px !important;
     }
 }
