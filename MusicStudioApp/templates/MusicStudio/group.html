@@ -78,6 +78,25 @@
                 </table>
             </div>
         </div>
+        <div class="adaptive-repertoire">
+            <style>
+                li::before{
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    content: "";
+                    background-image: url({% static "img/Note.png" %});
+                    background-size: contain;
+                }
+            </style>
+            <ul>
+                {% for song in songs %}
+                    <li>{{ song.author }} - {{song.name}} ({{song.time|date:"i:s"}})</li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 {% endblock main %}
 

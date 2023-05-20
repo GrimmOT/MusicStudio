@@ -1,0 +1,16 @@
+@media screen and (max-width: 420px){
+    .concert-name{
+        font-size: 21px;
+    }
+    .concert-video{
+        transform: scale(0.6);
+        padding-top: 0px;
+    }
+    .swiper{
+        height: 45vw;
+    }
+    .separation{
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}

@@ -133,3 +133,10 @@ td, th{
 tr:last-child td{
     border: none;
 }
+.adaptive-repertoire{
+    font-size: 23px;  
+}
+li{
+    position: relative;
+    padding-left: 30px;
+}
