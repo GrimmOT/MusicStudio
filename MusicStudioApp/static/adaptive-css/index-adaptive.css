@@ -81,14 +81,14 @@
     }
     .about-us{
         height: 80vh;
-        margin-top: 120px;
+    }
+    .about-us-photo{
+        left: 0;
+        top: 0;
     }
     .about-us-photo::before{
-        width: 300px;
-        height: 187px;
-    }
-    .about-us-photo img{
-        width: 300px
+        width: 70vw;
+        height: 44vw;
     }
     .groups-photo{
         width: 500px;
@@ -99,4 +99,7 @@
     .groups-photo-line img{
         width: 180px !important;
     }
-}
+    .about-us-photo img{
+        width: 70vw;
+    }
+    }

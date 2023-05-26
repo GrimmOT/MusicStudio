@@ -134,7 +134,8 @@ tr:last-child td{
     border: none;
 }
 .adaptive-repertoire{
-    font-size: 23px;  
+    font-size: 23px;
+    display: none;  
 }
 li{
     position: relative;
